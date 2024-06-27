@@ -25,11 +25,19 @@ class Rectangle {
 }
 
 class Square extends Rectangle {
-	constructor(side,width,height)
-	{
-		super(width,height)
-		this.side=side;
-	}
+	 constructor(side) {
+        super(side, side);
+        this.side = side;
+    }
+
+    get side() {
+        return this.width; // Since width and height are the same in a square
+    }
+
+    set side(value) {
+        this.width = value;
+        this.height = value;
+    }
 	getPerimeter(){
 		return 4*this.side;
 	}
